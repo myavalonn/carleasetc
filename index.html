@@ -60,6 +60,13 @@ color:#e60023;
 font-weight:bold;
 }
 
+/* 針對「好」字的特殊樣式 */
+.big-red-hao {
+color: #e60023;
+font-size: 42px;
+font-weight: 900;
+}
+
 .card{
 background:white;
 border-radius:14px;
@@ -109,14 +116,15 @@ display:inline-block;
 <div class="main-title">小倆口大廈</div>
 <div class="sub-title">2號車位 (上層)</div>
 
-<img src="https://ik.imagekit.io/lql1uveoc/IMG_7501.png" class="parking-img">
+<img src="https://ik.imagekit.io/lql1uveoc/IMG_7501.jpeg" class="parking-img">
 
 <div class="section">
-    <span style="font-size: 32px; font-weight: 900; color: #000;">好停，好出入</span><br>
+    <span style="font-size: 32px; font-weight: 900; color: #000;">
+        <span class="big-red-hao">好</span>停，<span class="big-red-hao">好</span>出入
+    </span><br>
     <span class="highlight">🚀 隨時可租</span>
 </div>
 
-<!-- 價格方案區 -->
 <div class="card">
 <div class="plan">單月<br>方案</div>
 <div class="price">NT$ 2,500 / 月</div>
@@ -135,7 +143,6 @@ display:inline-block;
 <div class="price highlight">NT$ 2,000 / 月</div>
 </div>
 
-<!-- 備註資訊 -->
 <div class="section" style="text-align: left;">
 1. 提前退租：以單月 <span class="highlight">NT$ 2,500 / 月</span> 計算<br>
 2. 押金：需 <span class="highlight">NT$ 2,500</span><br>
