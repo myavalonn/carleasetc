@@ -47,12 +47,12 @@ margin-bottom: 25px;
 /* 縮小高度後的方格 */
 .feature-section{
 background:white;
-padding:10px 25px; /* 縮小上下內距 (從 25px 降至 10px) */
+padding:10px 25px; 
 border-radius:14px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 margin-bottom:20px;
 font-size:24px; 
-line-height:1.4; /* 緊湊一點的行高 */
+line-height:1.4; 
 text-align: center;
 }
 
@@ -66,7 +66,33 @@ font-weight:bold;
 color: #e60023;
 font-size: 42px;
 font-weight: 900;
-vertical-align: middle; /* 讓放大後的字垂直居中 */
+vertical-align: middle; 
+}
+
+/* 半年方案折扣 (紅色字) */
+.discount-tag-red {
+font-size: 32px;
+font-weight: 900;
+margin-right: 8px;
+color: #e60023;
+vertical-align: middle;
+}
+
+/* 一年方案折扣 (紫色發光藥丸) */
+.discount-pill-purple {
+display: inline-block;
+background-color: #6a1b9a; /* 深紫色背景 */
+color: #ffffff;            /* 白色字體 */
+font-size: 28px;           /* 稍微縮小字體以適應藥丸形狀 */
+font-weight: 900;
+padding: 8px 20px;       /* 增加左右內距形成藥丸狀 */
+border-radius: 50px;       /* 圓角 */
+margin-right: 10px;
+vertical-align: middle;
+line-height: 1;            /* 確保字體垂直居中 */
+/* 發光效果 */
+box-shadow: 0 0 10px rgba(106, 27, 154, 0.6), 
+            0 0 20px rgba(106, 27, 154, 0.4);
 }
 
 .card{
@@ -90,6 +116,8 @@ line-height: 1.2;
 font-size:28px; 
 font-weight:bold;
 white-space: nowrap; 
+display: flex;         /* 讓折扣和價格垂直居中對齊 */
+align-items: center;
 }
 
 .year{
@@ -132,7 +160,6 @@ text-align: left;
 
 <img src="https://ik.imagekit.io/lql1uveoc/IMG_7501.jpeg" class="parking-img">
 
-<!-- 這裡就是縮小高度後的方格 -->
 <div class="feature-section">
     <span style="font-size: 32px; font-weight: 900; color: #000;">
         <span class="big-red-hao">好</span>停，<span class="big-red-hao">好</span>出入
@@ -147,7 +174,7 @@ text-align: left;
 
 <div class="card">
 <div class="plan">半年<br>方案</div>
-<div class="price">NT$ 2,300 / 月</div>
+<div class="price"><span class="discount-tag-red">-8%</span> NT$ 2,300 / 月</div>
 </div>
 
 <div class="card year">
@@ -155,7 +182,7 @@ text-align: left;
 <div class="plan">一年<br>方案</div>
 <div class="badge">👑 最優惠</div>
 </div>
-<div class="price highlight">NT$ 2,000 / 月</div>
+<div class="price highlight"><span class="discount-pill-purple">-20%</span> NT$ 2,000 / 月</div>
 </div>
 
 <div class="info-section">
