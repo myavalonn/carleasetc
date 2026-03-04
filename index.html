@@ -1,9 +1,75 @@
-<style>
-/* ...保留你原本的其他樣式... */
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>車位出租</title>
 
-/* 1. 讓卡片成為定位基準點 */
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* 位置資訊：黑色、超大、加粗 */
+.main-title {
+    text-align: center;
+    font-size: 48px; 
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.parking-img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+/* 方格樣式 */
+.feature-section {
+    background: white;
+    padding: 10px 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    font-size: 24px; 
+    line-height: 1.4;
+    text-align: center;
+}
+
+.highlight {
+    color: #e60023;
+    font-weight: bold;
+}
+
+/* 「好」字樣式 */
+.big-red-hao {
+    color: #e60023;
+    font-size: 42px;
+    font-weight: 900;
+    vertical-align: middle;
+}
+
+/* 卡片基礎樣式 */
 .card {
-    position: relative; /* 新增：讓內部的 badge 可以相對於它定位 */
+    position: relative; /* 必備：讓 badge 可以相對於此定位 */
     background: white;
     border-radius: 14px;
     padding: 25px;
@@ -12,33 +78,93 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden; /* 確保標籤不會超出圓角 */
 }
 
-/* 2. 針對「一年方案」特別加強邊框與背景 */
-.card.year {
-    border: 4px solid #e60023; /* 改成紅色更顯眼，或維持黑色 */
+.plan {
+    font-size: 26px; 
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.price {
+    font-size: 28px; 
+    font-weight: bold;
+    white-space: nowrap; 
+}
+
+/* 一年方案特別樣式 */
+.year {
+    border: 4px solid #e60023; /* 改為紅色更醒目 */
     background: #fff5f5;
-    padding-top: 35px; /* 增加上方內距，避免內容撞到標籤 */
+    padding-top: 35px; /* 增加上方內距，留位置給標籤 */
 }
 
-/* 3. 修改標籤樣式，讓它飛到右上角 */
+/* 右上角最優惠標籤 */
 .badge {
     position: absolute;
     top: 0;
     right: 0;
-    background: #e60023; /* 改成紅色更有「優惠感」 */
+    background: #e60023; 
     color: white;
     padding: 6px 15px;
-    border-radius: 0 10px 0 10px; /* 只圓化左下和右上角，更有設計感 */
+    border-bottom-left-radius: 14px; /* 內側圓角 */
     font-size: 18px;
     font-weight: bold;
-    margin: 0; /* 清除原本的 margin */
+}
+
+/* 備註區塊 */
+.info-section {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    font-size: 24px; 
+    line-height: 1.9;
+    text-align: left;
 }
 </style>
+</head>
 
-<!-- HTML 部分修改如下 -->
-<div class="card year">
-    <div class="plan">一年<br>方案</div>
-    <div class="badge">👑 最優惠</div>
-    <div class="price highlight">NT$ 2,000 / 月</div>
+<body>
+
+<div class="container">
+    <div class="main-title">小倆口大廈</div>
+    <div class="sub-title">2號車位 (上層)</div>
+
+    <img src="https://ik.imagekit.io/lql1uveoc/IMG_7501.jpeg" class="parking-img">
+
+    <div class="feature-section">
+        <span style="font-size: 32px; font-weight: 900; color: #000;">
+            <span class="big-red-hao">好</span>停，<span class="big-red-hao">好</span>出入
+        </span><br>
+        <span class="highlight" style="font-size: 26px;">🚀 隨時可租⬇️⬇️</span>
+    </div>
+
+    <div class="card">
+        <div class="plan">單月<br>方案</div>
+        <div class="price">NT$ 2,500 / 月</div>
+    </div>
+
+    <div class="card">
+        <div class="plan">半年<br>方案</div>
+        <div class="price">NT$ 2,300 / 月</div>
+    </div>
+
+    <!-- 第三個欄位：最優惠放在右上角 -->
+    <div class="card year">
+        <div class="badge">👑 最優惠</div>
+        <div class="plan">一年<br>方案</div>
+        <div class="price highlight">NT$ 2,000 / 月</div>
+    </div>
+
+    <div class="info-section">
+        1. 提前退租：以單月 <span class="highlight">NT$ 2,500 / 月</span> 計算<br>
+        2. 押金：需 <span class="highlight">NT$ 2,500</span><br>
+        3. 車位毀損需共同負擔 30% 費用
+    </div>
 </div>
+
+</body>
+</html>
