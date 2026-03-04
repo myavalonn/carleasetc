@@ -12,7 +12,7 @@ body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
 background:#f4f6f8;
 margin:0;
-padding:20px;
+padding:15px; /* 稍微縮小外邊距 */
 }
 
 .container{
@@ -20,10 +20,9 @@ max-width:700px;
 margin:auto;
 }
 
-/* 位置資訊：黑色、超大、加粗 */
 .main-title{
 text-align:center;
-font-size:48px; 
+font-size:40px; /* 手機版稍縮小 */
 font-weight:900;
 color:#000000;
 margin-bottom:5px;
@@ -31,7 +30,7 @@ margin-bottom:5px;
 
 .sub-title{
 text-align:center;
-font-size:36px;
+font-size:30px;
 font-weight:bold;
 color:#000000;
 margin-bottom:20px;
@@ -42,18 +41,80 @@ width: 100%;
 border-radius: 14px;
 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 margin-bottom: 25px;
+display: block;
 }
 
-/* 縮小高度後的方格 */
 .feature-section{
 background:white;
-padding:10px 25px; 
+padding:15px; 
 border-radius:14px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 margin-bottom:20px;
-font-size:24px; 
-line-height:1.4; 
 text-align: center;
+}
+
+.big-red-hao {
+color: #e60023;
+font-size: 38px;
+font-weight: 900;
+vertical-align: middle; 
+}
+
+/* 卡片容器優化 */
+.card{
+background:white;
+border-radius:14px;
+padding:15px 12px; /* 縮小內距防止溢出 */
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+overflow: hidden; /* 防止內容溢出 */
+}
+
+.plan{
+font-size:22px; 
+font-weight:bold;
+line-height: 1.2;
+flex-shrink: 0; /* 防止標題被擠壓 */
+margin-right: 5px;
+}
+
+/* 價格區域：自動調整字體大小 */
+.price{
+font-size: clamp(18px, 4vw, 26px); /* 根據螢幕寬度自動縮放 */
+font-weight:bold;
+white-space: nowrap; 
+display: flex;         
+align-items: center;
+flex-shrink: 1;
+}
+
+/* 半年折扣 */
+.discount-tag-red {
+font-size: 0.9em;
+font-weight: 900;
+margin-right: 5px;
+color: #e60023;
+}
+
+/* 一年方案發光藥丸：調整手機比例 */
+.discount-pill-purple {
+display: inline-block;
+background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+color: #ffffff;
+font-size: 0.85em; /* 隨父層價格縮放 */
+font-weight: 900;
+padding: 4px 12px;
+border-radius: 50px;
+margin-right: 8px;
+box-shadow: 0 2px 10px rgba(106, 27, 154, 0.4);
+}
+
+.year{
+border:3px solid #000000; 
+background:#fff5f5;
 }
 
 .highlight{
@@ -61,90 +122,31 @@ color:#e60023;
 font-weight:bold;
 }
 
-/* 針對「好」字的特殊樣式 */
-.big-red-hao {
-color: #e60023;
-font-size: 42px;
-font-weight: 900;
-vertical-align: middle; 
-}
-
-/* 半年方案折扣 (紅色字) */
-.discount-tag-red {
-font-size: 32px;
-font-weight: 900;
-margin-right: 8px;
-color: #e60023;
-vertical-align: middle;
-}
-
-/* 一年方案折扣 (紫色發光藥丸) */
-.discount-pill-purple {
-display: inline-block;
-background-color: #6a1b9a; /* 深紫色背景 */
-color: #ffffff;            /* 白色字體 */
-font-size: 28px;           /* 稍微縮小字體以適應藥丸形狀 */
-font-weight: 900;
-padding: 8px 20px;       /* 增加左右內距形成藥丸狀 */
-border-radius: 50px;       /* 圓角 */
-margin-right: 10px;
-vertical-align: middle;
-line-height: 1;            /* 確保字體垂直居中 */
-/* 發光效果 */
-box-shadow: 0 0 10px rgba(106, 27, 154, 0.6), 
-            0 0 20px rgba(106, 27, 154, 0.4);
-}
-
-.card{
-background:white;
-border-radius:14px;
-padding:25px;
-margin-bottom:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-}
-
-.plan{
-font-size:26px; 
-font-weight:bold;
-line-height: 1.2;
-}
-
-.price{
-font-size:28px; 
-font-weight:bold;
-white-space: nowrap; 
-display: flex;         /* 讓折扣和價格垂直居中對齊 */
-align-items: center;
-}
-
-.year{
-border:4px solid #000000; 
-background:#fff5f5;
-}
-
 .badge{
 background:#000000; 
 color:white;
-padding:4px 10px;
-border-radius:8px;
-font-size:16px;
-margin-top:6px;
+padding:2px 8px;
+border-radius:6px;
+font-size:14px;
+margin-top:4px;
 display:inline-block;
 }
 
-/* 下方備註區塊保持原樣 */
 .info-section{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:14px;
 box-shadow:0 4px 10px rgba(0,0,0,0.08);
 margin-bottom:25px;
-font-size:24px; 
-line-height:1.9;
-text-align: left;
+font-size:20px; 
+line-height:1.6;
+}
+
+/* 針對極小螢幕的微調 */
+@media (max-width: 375px) {
+    .card { padding: 12px 8px; }
+    .plan { font-size: 18px; }
+    .price { font-size: 17px; }
 }
 
 </style>
@@ -161,34 +163,40 @@ text-align: left;
 <img src="https://ik.imagekit.io/lql1uveoc/IMG_7501.jpeg" class="parking-img">
 
 <div class="feature-section">
-    <span style="font-size: 32px; font-weight: 900; color: #000;">
+    <span style="font-size: 28px; font-weight: 900; color: #000;">
         <span class="big-red-hao">好</span>停，<span class="big-red-hao">好</span>出入
     </span><br>
-    <span class="highlight" style="font-size: 26px;">🚀 隨時可租⬇️⬇️</span>
+    <span class="highlight" style="font-size: 22px;">🚀 隨時可租⬇️⬇️</span>
 </div>
 
 <div class="card">
-<div class="plan">單月<br>方案</div>
-<div class="price">NT$ 2,500 / 月</div>
+    <div class="plan">單月<br>方案</div>
+    <div class="price">NT$ 2,500 / 月</div>
 </div>
 
 <div class="card">
-<div class="plan">半年<br>方案</div>
-<div class="price"><span class="discount-tag-red">-8%</span> NT$ 2,300 / 月</div>
+    <div class="plan">半年<br>方案</div>
+    <div class="price">
+        <span class="discount-tag-red">-8%</span> 
+        <span>NT$ 2,300 / 月</span>
+    </div>
 </div>
 
 <div class="card year">
-<div>
-<div class="plan">一年<br>方案</div>
-<div class="badge">👑 最優惠</div>
-</div>
-<div class="price highlight"><span class="discount-pill-purple">-20%</span> NT$ 2,000 / 月</div>
+    <div>
+        <div class="plan">一年<br>方案</div>
+        <div class="badge">👑 最優惠</div>
+    </div>
+    <div class="price highlight">
+        <span class="discount-pill-purple">-20%</span> 
+        <span>NT$ 2,000 / 月</span>
+    </div>
 </div>
 
 <div class="info-section">
-1. 提前退租：以單月 <span class="highlight">NT$ 2,500 / 月</span> 計算<br>
-2. 押金：需 <span class="highlight">NT$ 2,500</span><br>
-3. 車位毀損需共同負擔 30% 費用
+    1. 提前退租：以單月 <span class="highlight">NT$ 2,500 / 月</span> 計算<br>
+    2. 押金：需 <span class="highlight">NT$ 2,500</span><br>
+    3. 車位毀損需共同負擔 30% 費用
 </div>
 
 </div>
