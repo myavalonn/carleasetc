@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>車位出租 - 新都心</title>
+
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* 位置資訊：黑色、超大、加粗 */
+.main-title {
+    text-align: center;
+    font-size: 48px; 
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* 方格樣式 */
+.feature-section {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    font-size: 24px; 
+    line-height: 1.4;
+    text-align: center;
+}
+
+.highlight {
+    color: #e60023;
+    font-weight: bold;
+}
+
+/* 「好」字樣式 */
+.big-red-hao {
+    color: #e60023;
+    font-size: 42px;
+    font-weight: 900;
+    vertical-align: middle;
+}
+
+/* 卡片基礎樣式 */
+.card {
+    position: relative; 
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.plan {
+    font-size: 26px; 
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.price {
+    font-size: 28px; 
+    font-weight: bold;
+    white-space: nowrap; 
+}
+
+/* 一年方案特別樣式 */
+.year {
+    border: 4px solid #e60023;
+    background: #fff5f5;
+    padding-top: 35px;
+}
+
+/* 右上角最優惠標籤 */
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e60023; 
+    color: white;
+    padding: 6px 15px;
+    border-bottom-left-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 備註區塊 */
+.info-section {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    font-size: 24px; 
+    line-height: 1.9;
+    text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="main-title">新都心B3.</div>
+    <div class="sub-title">13號車位</div>
+
+    <div class="feature-section">
+        <span style="font-size: 32px; font-weight: 900; color: #000;">
+            <span class="big-red-hao">好</span>停，<span class="big-red-hao">好</span>出入
+        </span><br>
+        <span class="highlight" style="font-size: 26px;">🚀 隨時可租⬇️⬇️</span>
+    </div>
+
+    <div class="card">
+        <div class="plan">每月<br>方案</div>
+        <div class="price">NT$ 3,500 / 月</div>
+    </div>
+
+    <div class="card">
+        <div class="plan">半年<br>方案</div>
+        <div class="price">NT$ 3,350 / 月</div>
+    </div>
+
+    <div class="card year">
+        <div class="badge">👑 最優惠</div>
+        <div class="plan">每年<br>方案</div>
+        <div class="price highlight">NT$ 3,200 / 月</div>
+    </div>
+
+    <div class="info-section">
+        1. 押金：需 <span class="highlight">NT$ 3,500</span><br>
+        2. 提前退租：以每月 <span class="highlight">NT$ 3,500 / 月</span> 計算
+    </div>
+</div>
+
+</body>
+</html>
